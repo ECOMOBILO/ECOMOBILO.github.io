@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECOMOBILO</title>
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, monospace;
+            background-color: white; 
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #76c3d7;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1em;
+            flex-direction: row;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .search-bar {
+            margin-top: 1em;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 0.5em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        .search-bar button {
+            padding: 0.5em;
+            border: none;
+            background: #76c3d7;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 0.5em;
+        }
+
+        .search-bar button:hover {
+            background: #5ba2b2;
+        }
+
+        main {
+            padding: 2em;
+            padding-top: 4em; /* To ensure content does not overlap with fixed header */
+        }
+
+        section {
+            margin-bottom: 2em;
+        }
+
+        h2 {
+            border-bottom: 2px solid #76c3d7;
+            padding-bottom: 0.5em;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 1em;
+        }
+
+        .product-gallery {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            margin: 10px;
+            text-align: center;
+        }
+
+        .product img {
+            border: 2px solid #edc3cf;
+            padding: 5px;
+            transition: transform 0.3s;
+        }
+
+        .product img:hover {
+            transform: scale(1.1);
+        }
+
+        #checkout-button {
+            background: #FCCC4E;
+            color: #fff;
+            border: none;
+            padding: 1em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        #checkout-button:hover {
+            background: #edc3cf;
+        }
+
+        .footer-logos {
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+        }
+
+        footer {
+            background: #8dcb9c;
+            color: #fff;
+            text-align: center;
+            padding: 0.5em 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer img {
+            max-width: 40px;
+            height: auto;
+        }
+
+        .cart-summary {
+            margin-top: 1em;
+            padding: 1em;
+            border: 1px solid #ddd;
+        }
+
+        .cart-summary h3 {
+            margin: 0 0 0.5em;
+        }
+
+        .faq-item {
+    margin-bottom: 1em;
+}
+
+.faq-question {
+    display: block;
+    background: #76c3d7;
+    color: white;
+    padding: 1em;
+    cursor: pointer;
+    border: 1px solid #76c3d7;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+    text-decoration: none;
+}
+
+.faq-question:hover {
+    background: #5ba2b2;
+}
+
+.faq-answer {
+    display: none;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked + label + .faq-answer {
+    display: block;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Logotipo-removebg-preview.png" alt="Logo ECOMOBILO" width="100">
+        <h1>ECOMOBILO</h1>
+    </header>
+    
+    <main>
+        <section id="bienvenida">
+            <h2>Bienvenida</h2>
+            <p></p>
+            <p>Bienvenidos a ECOMOBILO, tu destino para muebles hechos de materiales reciclados. Nuestra misión es combinar diseño elegante y sostenibilidad ambiental en cada pieza que creamos.</p>
+            <img src="Fondo 1.jpg" alt="Bienvenida">
+        </section>
+        
+        <section id="historia">
+            <h2>Historia</h2>
+            <p>ECOMOBILO nació de la pasión por el reciclaje y el diseño de muebles únicos. Desde nuestros inicios, nos hemos dedicado a transformar materiales desechados en obras de arte funcionales para el hogar.</p>
+            <img src="Fondo 2.jpg" alt="Historia">
+        </section>
+        
+        <section id="etica">
+            <h2>Ética Laboral</h2>
+            <img src="images/ethics.jpg" alt="Ética Laboral">
+            <p>Nuestros valores se basan en la responsabilidad social y ambiental. Nos esforzamos por mantener prácticas de trabajo justas y sostenibles, asegurándonos de que cada proceso sea respetuoso con el medio ambiente y las comunidades locales.</p>
+        </section>
+        
+        <section id="equipo">
+            <h2>Equipo de Trabajo</h2>
+            <img src="images/team.jpg" alt="Equipo de Trabajo">
+            <p>El equipo de ECOMOBILO está formado por artesanos y diseñadores apasionados por la sostenibilidad. Juntos, trabajamos para crear muebles que no solo sean hermosos, sino que también cuenten una historia de renovación y creatividad.</p>
+        </section>
+        
+        <section id="productos, servicios y tienda">
+            <h2>Productos y Servicios</h2>
+            <img src="images/products_services.jpg" alt="Productos y Servicios">
+            <p>Ofrecemos una amplia gama de muebles hechos a mano, desde mesas y sillas hasta estanterías y decoraciones. También proporcionamos servicios personalizados para adaptarnos a las necesidades específicas de nuestros clientes.Visita nuestra tienda en línea para explorar nuestras colecciones de muebles y accesorios. Cada pieza está hecha con cuidado y dedicación para garantizar la máxima calidad y sostenibilidad.</p>
+
+            <div class="product-gallery">
+                <div class="product">
+                    <img src="Cama de gato.jpg" alt="Producto 1" width="200" height="200">
+                    <p>Cama de gato reciclada</p>
+                    <p>Precio: $50</p>
+                    <button onclick="addToCart('Cama de gato reciclada', 50)">Agregar al Carrito</button>
+                </div>
+                <div class="product">
+                    <img src="images/product2.jpg" alt="Producto 2" width="200" height="200">
+                    <p>Silla de Madera Reutilizada</p>
+                    <p>Precio: $75</p>
+                    <button onclick="addToCart('Silla de Madera Reutilizada', 75)">Agregar al Carrito</button>
+                </div>
+                <div class="product">
+                    <img src="images/product3.jpg" alt="Producto 3" width="200" height="200">
+                    <p>Estantería Ecológica</p>
+                    <p>Precio: $120</p>
+                    <button onclick="addToCart('Estantería Ecológica', 120)">Agregar al Carrito</button>
+                </div>
+            </div>
+        </section>
+        
+        <section id="blog">
+            <h2>Blog</h2>
+            <img src="images/blog.jpg" alt="Blog">
+            <p>Lee nuestro blog para obtener inspiración, consejos de diseño y novedades sobre sostenibilidad y reciclaje en el mundo del mobiliario. Recientemente, hemos publicado artículos sobre las últimas tendencias en diseño reciclado y entrevistas con nuestros artesanos.</p>
+        </section>
+        
+        <section id="faq">
+            <h2>FAQ</h2>
+            <img src="1.jpg" alt="FAQ">
+            <p>¿Tienes preguntas? Consulta nuestra sección de Preguntas Frecuentes para obtener respuestas rápidas y útiles sobre nuestros productos y servicios. Aquí encontrarás información sobre el proceso de compra, opciones de pago, y detalles de envío.</p>
+        
+            <div class="faq-item">
+                <input type="checkbox" id="faq1">
+                <label for="faq1" class="faq-question">¿Cómo realizo una compra?</label>
+                <div class="faq-answer">
+                    <p>Para realizar una compra, selecciona los productos que deseas y haz clic en el botón "Agregar al Carrito". Luego, ve a tu carrito y procede al pago siguiendo las instrucciones proporcionadas.</p>
+                </div>
+            </div>
+        
+            <div class="faq-item">
+                <input type="checkbox" id="faq2">
+                <label for="faq2" class="faq-question">¿Qué métodos de pago aceptan?</label>
+                <div class="faq-answer">
+                    <p>Aceptamos varios métodos de pago, incluyendo tarjetas de crédito y débito, así como pagos a través de plataformas seguras como PayPal.</p>
+                </div>
+            </div>
+        
+            <div class="faq-item">
+                <input type="checkbox" id="faq3">
+                <label for="faq3" class="faq-question">¿Cuál es el tiempo de envío?</label>
+                <div class="faq-answer">
+                    <p>El tiempo de envío puede variar según la ubicación y el producto. En general, el envío suele tardar entre 5 y 7 días hábiles. Recibirás una confirmación de envío con los detalles una vez que tu pedido haya sido procesado.</p>
+                </div>
+            </div>
+        
+            <div class="faq-item">
+                <input type="checkbox" id="faq4">
+                <label for="faq4" class="faq-question">¿Puedo devolver un producto?</label>
+                <div class="faq-answer">
+                    <p>Sí, aceptamos devoluciones dentro de los 30 días posteriores a la compra. Los productos deben estar en su estado original. Para iniciar una devolución, contáctanos a través de nuestro formulario de contacto.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <input type="checkbox" id="faq5">
+                <label for="faq5" class="faq-question">¿Ofrecen envíos internacionales?</label>
+                <div class="faq-answer">
+                    <p>Actualmente, solo ofrecemos envíos dentro del país. Estamos trabajando para expandir nuestras opciones de envío en el futuro.</p>
+                </div>
+            </div>
+        </section>
+        <section id="policies">
+            <h2>Políticas</h2>
+            <img src="images/policies.jpg" alt="Políticas">
+            <p>Consulta nuestras políticas para conocer más sobre devoluciones, garantías, cambios, servicio al cliente, envíos y privacidad. Aquí encontrarás toda la información necesaria para una experiencia de compra satisfactoria.</p>
+        
+            <div class="policy-item" style="background-color: #e0f7fa;">
+                <input type="checkbox" id="policy1">
+                <label for="policy1" class="policy-question">Política de Devoluciones</label>
+                <div class="policy-answer">
+                    <p>En ECOMOBILO, permitimos devoluciones dentro de un período de 30 días a partir de la fecha de compra. Aceptamos devoluciones solo si el producto está en condiciones originales, sin uso y en su empaque original. Para procesar una devolución, solicitamos la presentación del recibo o comprobante de compra. Nuestro proceso de devolución es claro y sencillo, permitiendo iniciar devoluciones tanto en línea como en tienda, y proporcionando etiquetas de envío prepagadas cuando sea aplicable.</p>
+                </div>
+            </div>
+        
+            <div class="policy-item" style="background-color: #ffecb3;">
+                <input type="checkbox" id="policy2">
+                <label for="policy2" class="policy-question">Política de Garantías</label>
+                <div class="policy-answer">
+                    <p>Ofrecemos una garantía limitada de 1 año que cubre defectos de fabricación y materiales en todos nuestros productos. La garantía especifica qué está cubierto, como defectos estructurales, y qué no está cubierto, como el desgaste normal. Para reclamar la garantía, los clientes deben seguir un proceso claro que incluye contactar a nuestro servicio al cliente y presentar pruebas del defecto, como fotos.</p>
+                </div>
+            </div>
+        
+            <div class="policy-item" style="background-color: #c8e6c9;">
+                <input type="checkbox" id="policy3">
+                <label for="policy3" class="policy-question">Política de Cambios</label>
+                <div class="policy-answer">
+                    <p>En ECOMOBILO, permitimos cambios de productos dentro de un período de 30 días bajo las mismas condiciones que las devoluciones. Los clientes pueden cambiar productos por otros de igual o mayor valor, pagando la diferencia si es necesario. Esta política asegura que nuestros clientes siempre obtengan el producto que mejor se adapte a sus necesidades y preferencias.</p>
+                </div>
+            </div>
+        
+            <div class="policy-item" style="background-color: #f8bbd0;">
+                <input type="checkbox" id="policy4">
+                <label for="policy4" class="policy-question">Política de Servicio al Cliente</label>
+                <div class="policy-answer">
+                    <p>Proveemos múltiples canales de atención al cliente, incluyendo teléfono, correo electrónico y chat en línea, con horarios claros de disponibilidad. Nos comprometemos a responder a todas las consultas dentro de un período de 24 a 48 horas. Además, tenemos un proceso de escalamiento para resolver problemas complejos o insatisfacciones de manera efectiva, ofreciendo compensaciones como descuentos en futuras compras o reemplazos gratuitos cuando sea apropiado.</p>
+                </div>
+            </div>
+        
+            <div class="policy-item" style="background-color: #d1c4e9;">
+                <input type="checkbox" id="policy5">
+                <label for="policy5" class="policy-question">Política de Envíos</label>
+                <div class="policy-answer">
+                    <p>Ofrecemos varias opciones de envío, incluyendo envío estándar y expreso, con envío gratuito en pedidos que superen los $100. Comunicamos claramente los tiempos estimados de envío y entrega, y ofrecemos seguimiento de pedidos en tiempo real para que nuestros clientes puedan monitorear el estado de su envío. Además, utilizamos empaques reciclables y trabajamos con empresas de logística que comparten nuestros valores de sostenibilidad.</p>
+                </div>
+            </div>
+        
+            <div class="policy-item" style="background-color: #ffe0b2;">
+                <input type="checkbox" id="policy6">
+                <label for="policy6" class="policy-question">Política de Privacidad y Seguridad</label>
+                <div class="policy-answer">
+                    <p>Garantizamos la seguridad de la información personal de nuestros clientes y cumplimos con todas las leyes de protección de datos aplicables. No compartimos información personal con terceros sin el consentimiento explícito del cliente. Además, implementamos métodos de pago seguros y encriptación para proteger los datos de las transacciones, asegurando que todas las compras en ECOMOBILO sean seguras y confiables.</p>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="footer-logos">
+                <a href="https://www.facebook.com" target="_blank"><img src="Facebook-removebg-preview.png" alt="Facebook Logo"></a>
+                <a href="https://wa.me/" target="_blank"><img src="whatsapp-removebg-preview.png" alt="WhatsApp Logo"></a>
+                <a href="https://www.instagram.com" target="_blank"><img src="Instagram-removebg-preview.png" alt="Instagram Logo"></a>
+            </div>
+            <p>&copy; 2024 ECOMOBILO. Todos los derechos reservados.</p>
+        </footer>
+    </main>
+</body>
+</html>
